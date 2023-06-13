@@ -11,11 +11,16 @@ def main():
     three_img = pg.transform.flip(three_img, True, False)
     threea_img = pg.transform.rotozoom(three_img, 10, 1.0)
     tmr = 0
+    count = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
+        if count >= 1599 :
+            screen.blit(bg_img, [0, 0])
+            count = 0
+        else:
+            screen.blit(bg_img, [-count, 0])
         if tmr % 2 == 0 :
             screen.blit(three_img, [300, 200])
         if tmr % 2 == 1 :
@@ -25,7 +30,8 @@ def main():
         #screen.blit(three_img, img_rct)
         pg.display.update()
         tmr += 1        
-        clock.tick(100)
+        count += 1
+        clock.tick(400)
 
 
 if __name__ == "__main__":
