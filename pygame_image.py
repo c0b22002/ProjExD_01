@@ -7,7 +7,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
-    three_img = pg.imge.load("ex01/fig/3.png")
+    three_img = pg.image.load("ex01/fig/3.png")
     three_img = pg.transform.flip(three_img, True, False)
     tmr = 0
     while True:
